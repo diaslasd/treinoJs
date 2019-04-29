@@ -1,0 +1,26 @@
+alt + ↑↓ - move a linha
+shift + alt + ↑↓ - duplica a linha
+shift + ctrl + k - apaga a linha
+
+ctrl + alt + n - roda o programa
+ctrl + alt + m - para o programa
+
+duplo click - seleciona a palavra
+ctrl + d - multiplas seleção
+
+ctrl + alt + ↑↓ - multiplas linhas
+
+ctrl + k + c - comentario
+
+f12 - vai para a função
+f1 ou ctr + shift + p - comandos
+
+ctr + shift + o - mostra os objetos do programa
+
+ctrl + home - vai para o início
+ctrl + end - vai para o fim
+
+ctr + 1 - abre browse
+
+criando snippets (atalhos)
+clg

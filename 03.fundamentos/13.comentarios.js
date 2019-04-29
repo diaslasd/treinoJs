@@ -1,0 +1,7 @@
+//Comentários
+
+/*
+    Comentário 
+    Multiplas
+    Linhas
+*/
