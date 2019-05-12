@@ -1,0 +1,15 @@
+* Configurando o Proxy do npm
+npm config set proxy "http://"login:password"@ip:porta"
+
+> npm config set proxy "http://"login:password"@10.52.132.215:8080"
+> npm config set https-proxy "http://"login:password"@10.52.132.215:8080"
+
+
+* modulor instalados
+
+// nodemon - ver alterações na aplicação em tempo real
+npm i -g nodemon
+> nodemon aplicacao.js
+
+// loadsh - modulo muito usado - intalada local
+npm - loadsh
