@@ -1,5 +1,5 @@
-// const url = 'http://tiop.dtceagl.intraer/funcionarios.json'
-const url = 'http://files.cod3r.com.br/curso-js/funcionarios.json'
+const url = 'http://tiop.dtceagl.intraer/funcionarios.json'
+//const url = 'http://files.cod3r.com.br/curso-js/funcionarios.json'
 const axios = require('axios')
 
 // Passado pelo Instrutor
