@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Origem CSS: Externo, Interno e Inline</title>
+    <!-- A ordem é importante -->
+    <style>
+        body {
+            background-color: aquamarine
+        }        
+    </style>
+    <link rel="stylesheet" href="css/externo.css">
+</head>
+<!-- No elemento tem preferência -->
+<body style="background-color: yellow;">
+    <h1>E agora?</h1>
+    <script>
+        document.body.style.backgroundColor = "red" // Top prioridade
+    </script>
+</body>
+</html>
