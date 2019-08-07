@@ -1,0 +1,12 @@
+#textoPrincipal {
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #444;
+    margin-bottom: 50px;
+    padding: 5px;
+}
+span {
+    line-height: 50px;
+    padding: 10px;
+}

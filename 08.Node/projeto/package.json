@@ -11,6 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "body-parser": "1.18.2",
+>>>>>>> 5f74d13c18670dc447e23ce8d30d6a59c9de67a3
     "express": "4.16.2"
   },
   "devDependencies": {

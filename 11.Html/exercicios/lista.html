@@ -1,0 +1,79 @@
+<h3>Aprovados</h3>
+<ol>
+    <li>André</li>
+    <li>Maria</li>
+    <li>Carlos</li>
+</ol>
+
+<h3>Mercado</h3>
+<ul>
+    <li>banana</li>
+    <li>maça</li>
+    <li>arroz</li>
+</ul>
+
+<h3>Aninhado</h3>
+<ul class='tree'>
+    <li>
+        <span wm-folder>Item 1</span>
+        <ul>            
+            <li>Item 1.1</li>
+            <li>Item 1.2</li>
+            <li>
+            <span wm-folder>Item 1.3</span>
+                <ul>
+                    <li>Item 1.3.1</li>
+                    <li>Item 1.3.2</li>
+                </ul>                
+            </li>
+            <li>Item 1.4</li>
+        </ul>        
+    </li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>
+        <span wm-folder>Item 4</span>        
+        <ul>
+            <li>Item 4.1</li>
+            <li>Item 4.2</li>
+        </ul>
+    </li>
+    <li>Item 5</li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<style>
+    .folderMenos {
+        cursor: default;
+        background-image: url("https://img.icons8.com/windows/16/000000/minus-math.png");
+        background-repeat: no-repeat;
+        padding-left: 16px;
+        position: relative;
+        left: -16px;
+    }
+    .folderMais {
+        cursor: crosshair;
+        background-image: url("https://img.icons8.com/windows/16/000000/plus-math.png");
+        background-repeat: no-repeat;
+        padding-left: 16px;
+        position: relative;
+        left: -16px;
+    }   
+</style>
+
+<script>
+    document.querySelectorAll('[wm-folder]').forEach( folder => {
+        folder.classList.toggle("folderMenos")
+        folder.onclick = function(e) {
+            // debugger
+            const ul = folder.nextElementSibling //proximo elemento
+            if (ul.style.display === "none") {
+                ul.style.display = "block"
+                folder.classList.toggle("folderMenos")
+            } else {
+                ul.style.display = "none"
+                folder.classList.toggle("folderMais")
+            }
+        }
+    })
+</script>

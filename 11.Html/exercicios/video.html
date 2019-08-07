@@ -1,0 +1,50 @@
+<video id="meuVideo" width="600px" >
+    <source src="/midia/AcidenteCinto.mp4" type="video/mp4">
+        <em>Seu browser não suporta a tag vídeo.</em>
+</video>
+<div wm-progresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style>
+    .progresso {
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+    .progresso div {
+        background-color: red;
+        color: black;
+        height: 100%;
+        text-align: center;
+        font-size: 14px;
+        width: 0%;
+    }
+</style>
+
+<script>
+
+    function configuraVideo(id){
+        video = document.getElementById(id)
+        video.oncontextmenu = () => false
+
+        document.querySelector(`[wm-play=${id}]`).onclick = e => video.play()
+        document.querySelector(`[wm-pause=${id}]`).onclick = e => video.pause()
+        
+        setInterval( () => {
+            const barraProg = document.querySelector(`[wm-progresso=${id}] > div`)
+            const percentual = (video.currentTime / video.duration) * 100
+            barraProg.style.width = `${percentual}%`
+            barraProg.innerHTML = `${percentual.toFixed(1)}%`
+        }, 500)
+
+    }    
+    
+    configuraVideo('meuVideo')
+
+</script>
