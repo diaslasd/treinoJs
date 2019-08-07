@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+        }
+
+        body {
+            /* overflow: hidden; */
+            color: #ffffff;
+        }
+
+        .quebra {
+            page-break-after: always;
+        }
+
+        .cabecalho {
+            background-color: #000;
+            height: 100px;
+            width: 100%;
+            margin: 0px;
+        }
+
+        #corpo {
+            height: -webkit-calc(100% - 100px);
+            /* para Chrome */
+            height: -moz-calc(100% - 100px);
+            /* para Firefox */
+            height: calc(100% - 100px);
+            /* para suporte nativo */
+            background-color: grey;
+            overflow: hidden;
+        }
+
+        section {
+            height: 100%;
+            padding: 10px;
+        }
+
+        .logo, .menu, .menu ul li, .autenticacao {
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .menu-toggle {
+            display: none;            
+        }
+
+        img {
+            height: 70px;
+            widows: 70px;
+            padding: 15px;
+        }
+
+        h1 {
+            font-size: 30px;
+            color: black;
+            text-shadow: 2px 2px 2px lime;
+        }
+
+        .autenticacao {
+            position: absolute;
+            right: 40px;
+            top: 45px;
+        }
+
+        .autenticacao a {
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            color: #fff;
+            font-family: serif;
+            font-weight: bold;
+        }
+
+        .botao {
+            /* display: block; */
+            background-color: red;
+            border-radius: 10px;
+        }
+
+        .menu li a {
+            display: block;
+            font-family: Oswald, Arial, Helvetica, sans-serif;
+            color: #fff;
+            font-size: 20px;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+
+        li a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        li a.ativo {
+            background-color: #fff;
+            color: #000;
+        }
+        
+        @media (max-width: 950px) {
+            .menu { display: none;}
+            .menu-toggle { display: inline-block; vertical-align: middle;}
+        }
+
+        @media (max-width: 650px) {
+            .logo { display: none;}
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio" class='ativo'>Início</a>
+                </li>
+                <li>
+                    <a href="#cursos">Cursos</a>
+                </li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href="#login">Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>
+    </header>
+
+    <div id="corpo">
+        <section id="inicio">
+            <h1>Página inicial</h1>
+        </section>
+        <section class="quebra" id="cursos">
+            <h1>Cursos</h1>
+        </section>
+        <section class="quebra" id="sobre">
+            <h1>Sobre</h1>
+        </section>
+        <section class="quebra" id="contato">
+            <h1>Contato</h1>
+        </section>
+    </div>
+
+
+    <script>
+        window.onhashchange = function(e) {
+            const oldURL = e.oldURL.split('#')[1]
+            const newURL = e.newURL.split('#')[1]
+
+            const inicioMenu = document.querySelector('.menu [href="#inicio"]')
+            const oldMenu = document.querySelector(`.menu [href="#${oldURL}"]`)
+            const newMenu = document.querySelector(`.menu [href="#${newURL}"]`)
+
+            inicioMenu.classList.remove('ativo')
+            oldMenu.classList.remove('ativo')
+            newMenu.classList.add('ativo')
+        }
+
+        
+    </script>
+</body>
+
+</html>
